@@ -47,6 +47,7 @@
 #include "Arial24x23.h"
 #include "font_big.h"
 #include "horaires.h"
+#include "test.h"
 #include "fermeture.h"
 
 //include common info between transmitter and receiver
@@ -155,10 +156,11 @@ static void set_default(void)
     puts("drive on");
     EPD_initialize_driver ();
     puts("drive init");
-    memcopy(horaires,image,IMAGE_LEN);
+    memcopy(test,image,IMAGE_LEN);
     EPD_display_from_array_prt ( old_image, image );
     puts("disp");
-    memcopy(horaires,old_image,IMAGE_LEN);
+    //memcopy(horaires,old_image,IMAGE_LEN);
+    memcopy(test,old_image,IMAGE_LEN);
     EPD_power_off();
     spi_release(EPD_PARAM_SPI);
     puts("drive off");
